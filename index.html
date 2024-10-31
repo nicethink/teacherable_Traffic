@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신호등 분류</title>
+    <title>신호등 감지</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,7 +61,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>신호등 분류 시스템</h1>
+        <h1>신호등 감지 시스템</h1>
         <select id="camera-select">
             <option value="user">전면 카메라</option>
             <option value="environment">후면 카메라</option>
@@ -156,12 +156,12 @@
                 
                 if (prediction[0].probability > prediction[1].probability) {
                     labelContainer.className = "success";
-                    labelContainer.innerHTML = "파란불입니다. 신호등을 건너가세요.";
-                    speakMessage("파란불입니다. 신호등을 건너가세요.");
+                    labelContainer.innerHTML = "파란색입니다. 길을 건너가세요.";
+                    speakMessage("파란색입니다. 길을 건너가세요.");
                 } else {
                     labelContainer.className = "warning";
-                    labelContainer.innerHTML = "빨간불입니다. 건너가지 마세요.;
-                    speakMessage("빨간불입니다. 건너가지 마세요.");
+                    labelContainer.innerHTML = "붉은색입니다. 길을 건너가지 마세요.";
+                    speakMessage("붉은색입니다. 길을 건너가지 마세요.");
                 }
             } catch (e) {
                 console.error('예측 오류:', e);
